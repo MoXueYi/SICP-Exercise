@@ -1,2 +1,2 @@
-# 我的SICP练习题仓库
-不定期更新SICP的习题Code
+# 我的SICP练习仓库
+不定期更新SICP的Code
