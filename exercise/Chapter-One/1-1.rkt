@@ -56,8 +56,6 @@
 ; Use this observation to describe the behavior of the following procedure:
 (define (a-plus-abs-b a b)
   ((if (> b 0) + -) a b))
-; 过程：
-; 函数 a-plus-abs-b 接受两个参数（a，b），
-; 判断参数 b 是否大于 0，如果值为真，将 "+" 作为运算符，否则将 "-" 作为运算符。
+; 过程：函数 a-plus-abs-b 接受两个参数（a，b），判断参数 b 是否大于 0，如果值为真，将 "+" 作为运算符，否则将 "-" 作为运算符。
 ; 描述：a + |b|
 
