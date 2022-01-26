@@ -41,6 +41,7 @@
 (/ (+ 5 4 (- 2 (- 3 (+ 6 (/ 4 5)))))
    (* 3 (- 6 2) (- 2 7)))
 
+
 ; 1.3 Define a procedure that takes three numbers as arguments and returns the sum of the squares of the two larger numbers.
 (define (three n1 n2 n3)
   (let ([sum-of-squares
@@ -52,6 +53,7 @@
 (three 2 3 1)
 (three 3 1 2)
 
+
 ; 1.4 Observe that our model of evaluation allows for combinations whose operators are compound expressions.
 ; Use this observation to describe the behavior of the following procedure:
 (define (a-plus-abs-b a b)
@@ -59,3 +61,25 @@
 ; 过程：函数 a-plus-abs-b 接受两个参数（a，b），判断参数 b 是否大于 0，如果值为真，将 "+" 作为运算符，否则将 "-" 作为运算符。
 ; 描述：a + |b|
 
+
+; 1.5 Ben Bitdiddle has invented a test to determine
+; whether the interpreter he is faced with is using applicativeorder evaluation or normalorder evaluation.
+; He defines the following two procedures:
+
+(define (p) p)
+(define (test x y)
+  (if (= x 0)
+      0
+      y))
+
+(test 0 (p))
+
+; 如果某个解析器采用应用序
+; (test 0 #<procedure:p>)
+; (if (= 0 0))
+; 0
+
+; 如果某个解析器采用正则序
+; (test 0 #<procedure:p>)
+; (if (= 0 0) 0 #<procedure:p>)
+; 0
