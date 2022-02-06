@@ -46,8 +46,9 @@
         (sqrt-iter (improve guess x) x)))
   (sqrt-iter 1.0 x))
 |#  
-; 让sqrt的 x 显示地被内部调用
-#|(define (sqrt x)
+; 让sqrt的 x 不显示地被内部调用，让它成为自由变量
+#|
+(define (sqrt x)
   (define (good-enough? guess)
     (< (abs (- (square guess) x)) 0.001))
   (define (improve guess)
@@ -74,6 +75,7 @@
                     (average guess (/ x guess)))]
          [average (lambda (x y)
                     (/ (+ x y) 2))]
-         [square (lambda (x) (* x x))])
+         [square (lambda (x)
+                   (* x x))])
     (sqrt-iter 1.0)))
 |#
