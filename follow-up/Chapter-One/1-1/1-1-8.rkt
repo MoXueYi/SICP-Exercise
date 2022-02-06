@@ -62,7 +62,7 @@
   (sqrt-iter 1.0))
 |#
 
-; Racket下使用 letrec 的实现
+; Racket下使用 letrec 的描述
 #|
 (define (sqrt x)
   (letrec ([sqrt-iter (lambda (guess)
